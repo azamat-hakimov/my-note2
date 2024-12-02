@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notes Page</title>
+</head>
+<body>
+    <h1>All your saved notes will be diplayed here.</h1>
+    <hr>
+
+    <p th:if="${notes == null || notes.isEmpty()}" th:text="${ifNull}"></p>
+    <ul>
+        <li th:each="note : ${notes}" th:text="${note}"></li>
+    </ul>
+
+    <hr>
+
+    <h3>Want to write new notes? </h3>
+    <form action="/write" method="get">
+        <button type="submit">Okay</button>
+    </form>
+
+</body>
+</html>
